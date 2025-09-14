@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Методичка по Python</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Справочник по Python для Вики</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="dark-theme">
+    <div class="container">
+        <header>
+            <h1><i class="fab fa-python"></i> Справочник по Python для Вики</h1>
+            <p>Основные концепции и синтаксис языка Python</p>
+            <button id="theme-toggle" class="theme-toggle">
+                <i class="fas fa-moon"></i>
+            </button>
+        </header>
+        
+        <div class="content">
+            <div class="main-content">
+                <article id="types">
+                    <h2><i class="fas fa-cubes"></i> Типы в Python</h2>
+                    <p>Тип - это набор допустимых значений и операций над ними. Фактически типы отвечают на вопрос: Каким способом я могу общаться с питоном? Так вот только через эти самые типы!</p>
+                    
+                    <span class="sticker sticker-note"><i class="fas fa-lightbulb"></i> Основные типы</span>
+                    
+                    <ul>
+                        <li><code>int</code> - тип целочисленных значений (12, 42, -11, 108, 0)</li>
+                        <li><code>float</code> - тип чисел с плавающей запятой (дробных)(12.0, -506.1, 67.62, 11.121)</li>
+                        <li><code>bool</code> - логический тип (True, False)</li>
+                        <li><code>str</code> - строковой тип ('Hello!', 'How are you?', 'What is your name?\n')(символ '\n' - это escape-последовательность (специальный символ, начинающийся с нижнего подчёркивания), которая переносит курсор на новую строку при выводе в консоль)</li>
+                    </ul>
+                </article>
+                
+                <article id="variables">
+                    <h2><i class="fas fa-tag"></i> Создание/использование переменных</h2>
+                    <p>Шаблон создание переменной: <code>имя_переменной = значение</code></p>
+                    
+                    <div class="example-box">
+                        <div class="example-header"><i class="fas fa-code"></i> Например:</div>
+                        <pre><code>a = 12
+b = 'Hello'
+c = True
+d = 2.48f</code></pre>
+                    </div>
+                    
+                    <div class="important">
+                        <p>!!! ИМЕНА ПЕРЕМЕННЫХ НЕ ДОЛЖНЫ ПОВТОРЯТЬСЯ!</p>
+                    </div>
+                    
+                    <div class="important">
+                        <p>!!! Хорошим тоном является:</p>
+                        <ol>
+                            <li>Давать переменным осмысленные имена, которые отражают суть того, что в них лежит</li>
+                            <li>Называть переменные в стиле snake_case (каждое следующее слово называется с маленькой буквы и отделяется от предыдущего '_' (нижним подчёркиванием))</li>
+                        </ol>
+                    </div>
+                    
+                    <div class="example-box">
+                        <div class="example-header"><i class="fas fa-code"></i> Например:</div>
+                        <pre><code>apples_count = 12
+money_count = 800
+can_buy_product = True
+name = 'Vika'</code></pre>
+                    </div>
+                    
+                    <div class="important">
+                        <p>!!! Важно не злоупотреблять длинными названиями! На ЕГЭ важна не красота и читаемость кода, а его работоспособность!</p>
+                    </div>
+                    
+                    <p>Обращение к переменным происходит через использование их имени. При обращении к переменной на её место просто ставиться значение, которой в ней хранилось.</p>
+                    
+                    <div class="example-box">
+                        <div class="example-header"><i class="fas fa-code"></i> Например:</div>
+                        <pre><code>x = 12
+print(x)</code></pre>
+                        <p>Заменится на:</p>
+                        <pre><code>print(12)</code></pre>
+                    </div>
+                </article>
+                
+                <article id="operators">
+                    <h2><i class="fas fa-plus-circle"></i> Операторы</h2>
+                    <p>Операторы - это специальные сиволы, которые выполняют определённые действия со своим операндами, заменяя себя на другую строчку.</p>
+                    <p>Операнды - объекты, с которыми работают операторы.</p>
+                    
+                    <span class="sticker sticker-tip"><i class="fas fa-info-circle"></i> Виды операторов</span>
+                    
+                    <p>Операторы делят на группы:</p>
+                    <ul>
+                        <li>Унарные: У них всего один операнд (not)</li>
+                        <li>Бинарные: У них два операнда (=, +, *, /, +=, ==, >, >=, and, or и т.д.)</li>
+                    </ul>
+                    
+                    <p>Нифига не понятно?) Ну например:</p>
+                    <pre><code>12 + 3</code></pre>
+                    <p>В данном примере знак '+' - это оператор, а числа '12' и '3' - это операнды (потому что именно с ними оператор и работает).</p>
+                    <p>И когда я писал про то, что операторы заменяют себя на другую строчку, в данном примере произойдёт следующая замена:</p>
+                    <pre><code>12 + 3 -> 15</code></pre>
+                    <p>То есть себя же операторы заменяют каким-то результатом.</p>
+                    
+                    <div class="example-box">
+                        <div class="example-header"><i class="fas fa-code"></i> Пример:</div>
+                        <pre><code>x = 17
+y = 2 + x
+print(y)</code></pre>
+                        
+                        <p>1) Подставляем вместо переменной x его значение:</p>
+                        <pre><code>y = 2 + 17
+print(y)</code></pre>
+                        
+                        <p>2) Заменяем оператор(+) и операнды(2 и 17) на результат операции:</p>
+                        <pre><code>y = 19
+print(y)</code></pre>
+                        
+                        <p>3) Подставляем вместо переменной y его значение:</p>
+                        <pre><code>print(19)</code></pre>
+                    </div>
+                    
+                    <p>Какие существуют операторы (что было -> во что превратилось):</p>
+                    
+                    <div class="operator-table">
+                        <div class="operator-row">
+                            <div class="operator-name">+</div>
+                            <div class="operator-example">1 + 5 -> 6</div>
+                            <div class="operator-example">'Hello, ' + 'World!' -> 'Hello, World!'</div>
+                        </div>
+                        
+                        <div class="operator-row">
+                            <div class="operator-name">-</div>
+                            <div class="operator-example">12 - 3 -> 9</div>
+                        </div>
+                        
+                        <div class="operator-row">
+                            <div class="operator-name">*</div>
+                            <div class="operator-example">3 * 4 -> 12</div>
+                            <div class="operator-example">'Hi' * 4 -> 'HiHiHiHi'</div>
+                        </div>
+                        
+                        <div class="operator-row">
+                            <div class="operator-name">/</div>
+                            <div class="operator-example">4 / 2 -> 2.0</div>
+                            <div class="operator-example">15 / 4 -> 3.75</div>
+                        </div>
+                        
+                        <div class="operator-row">
+                            <div class="operator-name">//</div>
+                            <div class="operator-example">4 // 2 -> 2</div>
+                            <div class="operator-example">15 // 4 -> 3</div>
+                        </div>
+                        
+                        <div class="operator-row">
+                            <div class="operator-name">%</div>
+                            <div class="operator-example">4 % 2 -> 0</div>
+                            <div class="operator-example">15 % 4 -> 3</div>
+                            <div class="operator-example">7 % 8 -> 7</div>
+                        </div>
+                        
+                        <div class="operator-row">
+                            <div class="operator-name">**</div>
+                            <div class="operator-example">2 ** 3 -> 8</div>
+                        </div>
+                        
+                        <div class="operator-row">
+                            <div class="operator-name">></div>
+                            <div class="operator-example">2 > 3 -> False</div>
+                            <div class="operator-example">3 > 3 -> False</div>
+                            <div class="operator-example">4 > 3 -> True</div>
+                        </div>
+                        
+                        <div class="operator-row">
+                            <div class="operator-name">>=</div>
+                            <div class="operator-example">2 >= 3 -> False</div>
+                            <div class="operator-example">3 >= 3 -> True</div>
+                            <div class="operator-example">4 >= 3 -> True</div>
+                        </div>
+                        
+                        <div class="operator-row">
+                            <div class="operator-name"><</div>
+                            <div class="operator-example">2 < 3 -> True</div>
+                            <div class="operator-example">3 < 3 -> False</div>
+                            <div class="operator-example">4 < 3 -> False</div>
+                        </div>
+                        
+                        <div class="operator-row">
+                            <div class="operator-name"><=</div>
+                            <div class="operator-example">2 <= 3 -> True</div>
+                            <div class="operator-example">3 <= 3 -> True</div>
+                            <div class="operator-example">4 <= 3 -> False</div>
+                        </div>
+                        
+                        <div class="operator-row">
+                            <div class="operator-name">==</div>
+                            <div class="operator-example">4 == 4 -> True</div>
+                            <div class="operator-example">4 == 3 -> False</div>
+                        </div>
+                        
+                        <div class="operator-row">
+                            <div class="operator-name">!=</div>
+                            <div class="operator-example">4 != 4 -> False</div>
+                            <div class="operator-example">4 != 3 -> True</div>
+                        </div>
+                        
+                        <div class="operator-row">
+                            <div class="operator-name">not</div>
+                            <div class="operator-example">not True -> False</div>
+                            <div class="operator-example">not False -> True</div>
+                        </div>
+                        
+                        <div class="operator-row">
+                            <div class="operator-name">and</div>
+                            <div class="operator-example">True and True -> True</div>
+                            <div class="operator-example">False and True -> False</div>
+                            <div class="operator-example">True and False -> False</div>
+                            <div class="operator-example">False and False -> False</div>
+                        </div>
+                        
+                        <div class="operator-row">
+                            <div class="operator-name">or</div>
+                            <div class="operator-example">True or True -> True</div>
+                            <div class="operator-example">False or True -> True</div>
+                            <div class="operator-example">True or False -> True</div>
+                            <div class="operator-example">False or False -> False</div>
+                        </div>
+                    </div>
+                    
+                    <div class="important">
+                        <p>Это важно:</p>
+                        <pre><code>x = 12
+x + 1
+print(x)</code></pre>
+                        <p>Вывод: 12</p>
+                        
+                        <p>Но:</p>
+                        <pre><code>x = 12
+x += 1
+print(x)</code></pre>
+                        <p>Вывод: 13</p>
+                    </div>
+                    
+                    <p>Таким образом x + 1 просто превращается в результат суммы, но не перезаписывает значение в переменной x в отличие от +=</p>
+                    <p>Соответственно для каждого арифметического оператора существуют свои версии подобной записи:</p>
+                    <p>+=, -=, *=, /=, //=, %=, **=</p>
+                </article>
+                
+                <article id="conditionals">
+                    <h2><i class="fas fa-code-branch"></i> Условные операторы</h2>
+                    
+                    <pre><code>if условие:
+    инструкции...</code></pre>
+                    
+                    <span class="sticker sticker-note"><i class="fas fa-sticky-note"></i> Правила</span>
+                    
+                    <ol>
+                        <li>Если условие True, тогда инструкции внутри if-а выполняются, иначе - не выполняются</li>
+                        <li>Инструкции считаются внутри if-а, если для них используется выравнивание равное 4-м пробелам (табуляция)</li>
+                    </ol>
+                    
+                    <div class="example-box">
+                        <div class="example-header"><i class="fas fa-code"></i> Пример:</div>
+                        <pre><code>money = 200
+product_cost = 150
+can_buy = money >= product_cost
+if can_buy:
+    print('Удалось купить продукт!')</code></pre>
+                    </div>
+                    
+                    <p>1) Подставляем вместо переменных money и product_cost значения:</p>
+                    <pre><code>can_buy = 200 >= 150
+if can_buy:
+    print('Удалось купить продукт!')</code></pre>
+                    
+                    <p>2) Заменяем оператор(>=) и операнды(200 и 150) на результат операции:</p>
+                    <pre><code>can_buy = True
+if can_buy:
+    print('Удалось купить продукт!')</code></pre>
+                    
+                    <p>3) Подставляем вместо переменной can_buy значение:</p>
+                    <pre><code>if True:
+    print('Удалось купить продукт!')</code></pre>
+                    
+                    <p>Вспоминаем правило 1. Поскольку внутри условия if-а стоит True, значит инструкция внутри него(print('Удалось купить продукт!')) будет выполнена</p>
+                    <p>Вывод программы: Удалось купить продукт!</p>
+                    
+                    <div class="example-box">
+                        <div class="example-header"><i class="fas fa-code"></i> Обратный пример:</div>
+                        <pre><code>money = 80
+product_cost = 150
+can_buy = money >= product_cost
+if can_buy:
+    print('Удалось купить продукт!')</code></pre>
+                    </div>
+                    
+                    <p>1) Подставляем вместо переменных money и product_cost значения:</p>
+                    <pre><code>can_buy = 80 >= 150
+if can_buy:
+    print('Удалось купить продукт!')</code></pre>
+                    
+                    <p>2) Заменяем оператор(>=) и операнды(80 и 150) на результат операции:</p>
+                    <pre><code>can_buy = False
+if can_buy:
+    print('Удалось купить продукт!')</code></pre>
+                    
+                    <p>3) Подставляем вместо переменной can_buy значение:</p>
+                    <pre><code>if False:
+    print('Удалось купить продукт!')</code></pre>
+                    
+                    <p>Вспоминаем правило 1. Поскольку внутри условия if-а стоит False, значит инструкция внутри него(print('Удалось купить продукт!')) не будет выполнена.</p>
+                    <p>Программа ничего не выведет в консоль</p>
+                    
+                    <p>elif и else:</p>
+                    
+                    <div class="example-box">
+                        <div class="example-header"><i class="fas fa-code"></i> Пример:</div>
+                        <pre><code>x = 5
+if x > 0:
+    print('Число положительное')
+if x < 0:
+    print('Число отрицательное')
+if x == 0:
+    print('Число равно нулю')</code></pre>
+                    </div>
+                    
+                    <p>Проблематика: в данном случае первая проверка пройдёт, но программу это не остановит от проверки оставшихся двух условий, что совершенно излишне.</p>
+                    <p>Данную проблему можно исправить, если оставшиеся два слова заменить на elif:</p>
+                    
+                    <pre><code>x = 5
+if x > 0:
+    print('Число положительное')
+elif x < 0:
+    print('Число отрицательное')
+elif x == 0:
+    print('Число равно нулю')</code></pre>
+                    
+                    <p>теперь если первая или вторая проверка пройдут, то оставшиеся проверяться не будут, что улучшит производительность кода.</p>
+                    <p>Более того последнюю проверку можно ещё сильнее упростить:</p>
+                    
+                    <pre><code>x = 5
+if x > 0:
+    print('Число положительное')
+elif x < 0:
+    print('Число отрицательное')
+else:
+    print('Число равно нулю')</code></pre>
+                    
+                    <p>ведь если x не больше и не меньше нуля, значит x равен нулю однозначно иных вариков быть не может.</p>
+                    <p>в таком случае удобно юзать else</p>
+                </article>
+                
+                <article id="loops">
+                    <h2><i class="fas fa-redo"></i> Циклы</h2>
+                    <p>Циклы позволяют выполнять определённые строчки кода по нескольку раз.</p>
+                    
+                    <span class="sticker sticker-tip"><i class="fas fa-lightbulb"></i> Виды циклов</span>
+                    
+                    <p>1. Через range:</p>
+                    <pre><code>for x in range(1, 6, 1):
+    print(x)
+    print('Всё клёво')</code></pre>
+                    
+                    <p>Данный цикл превратиться в:</p>
+                    
+                    <pre><code>x = 1
+print(x)
+print('Всё клёво')
+
+x = 2
+print(x)
+print('Всё клёво')
+
+x = 3
+print(x)
+print('Всё клёво')
+
+x = 4
+print(x)
+print('Всё клёво')
+
+x = 5
+print(x)
+print('Всё клёво')</code></pre>
+                    
+                    <p>Пояснения: for x in range(1, 6, 1) -> для переменной x в диапазоне от 1 до 6 не включительно с шагом 1 выполни инструкции, написанные внутри цикла(print(x) и print('Всё клёво')).</p>
+                    
+                    <p>Как бы спортсмену дают коробку названную x с изначально одной маслиной. В процессе пробежке ему встречается print(x), которая смотрит ему в коробку и выводит в консоль сколько у спортсмена маслин, и print('Всё клёво'), которая просто выводит 'Всё клёво'. До тех пор, пока маслин у нас в коробке x не станет 5 или больше, мы будем возвращаться к началу цикла, нам будут добавлять одну маслину, а мы будем проходить его занаво.</p>
+                    
+                    <div class="example-box">
+                        <div class="example-header"><i class="fas fa-code"></i> Пример с шагом в 2:</div>
+                        <pre><code>for x in range(0, 10, 2):
+    print(x)
+    print('Всё клёво')</code></pre>
+                    </div>
+                    
+                    <p>Данный цикл превратиться в:</p>
+                    
+                    <pre><code>x = 0
+print(x)
+print('Всё клёво')
+
+x = 2
+print(x)
+print('Всё клёво')
+
+x = 4
+print(x)
+print('Всё клёво')
+
+x = 6
+print(x)
+print('Всё клёво')
+
+x = 8
+print(x)
+print('Всё клёво')</code></pre>
+                    
+                    <p>После каждой пробежки добавляют по 2 маслины в коробку.</p>
+                    
+                    <div class="important">
+                        <p>Интересный факт:</p>
+                        <pre><code>range(3, 10, 1) -> range(3, 10)
+range(0, 10) -> range(10)</code></pre>
+                    </div>
+                    
+                    <p>2. Через запятую:</p>
+                    <pre><code>for x in 23, 11, 4, 6:
+    print(x)
+    print('Всё клёво')</code></pre>
+                    
+                    <p>Данный цикл превратиться в:</p>
+                    
+                    <pre><code>x = 23
+print(x)
+print('Всё клёво')
+
+x = 11
+print(x)
+print('Всё клёво')
+
+x = 4
+print(x)
+print('Всё клёво')
+
+x = 6
+print(x)
+print('Всё клёво')</code></pre>
+                    
+                    <p>3. Пробежка по строке:</p>
+                    <pre><code>for x in 'Hello!':
+    print(x)
+    print('Всё клёво')</code></pre>
+                    
+                    <p>Данный цикл превратиться в:</p>
+                    
+                    <pre><code>x = 'H'
+print(x)
+print('Всё клёво')
+
+x = 'e'
+print(x)
+print('Всё клёво')
+
+x = 'l'
+print(x)
+print('Всё клёво')
+
+x = 'l'
+print(x)
+print('Всё клёво')
+
+x = 'o'
+print(x)
+print('Всё клёво')
+
+x = '!'
+print(x)
+print('Всё клёво')</code></pre>
+                    
+                    <p>Вывод программы будет:</p>
+                    <pre><code>H
+Всё клёво
+e
+Всё клёво
+l
+Всё клёво
+l
+Всё клёво
+o
+Всё клёво
+!
+Всё клёво</code></pre>
+                    
+                    <p>То есть мы как бы взяли и пробежались по каждому символу строки.</p>
+                    
+                    <p>Вложенные циклы:</p>
+                    <pre><code>for x in range(5):
+    for y in range(6):
+        print(x, y)
+    print('Всё клёво')</code></pre>
+                    
+                    <p>Данный цикл превратиться в:</p>
+                    
+                    <pre><code>x = 0
+y = 0
+print(x, y)
+
+x = 0
+y = 1
+print(x, y)
+
+x = 0
+y = 2
+print(x, y)
+
+x = 0
+y = 3
+print(x, y)
+
+x = 0
+y = 4
+print(x, y)
+
+x = 0
+y = 5
+print(x, y)
+
+print('Всё клёво')
+
+x = 1
+y = 0
+print(x, y)
+
+x = 1
+y = 1
+print(x, y)
+
+x = 1
+y = 2
+print(x, y)
+
+x = 1
+y = 3
+print(x, y)
+
+x = 1
+y = 4
+print(x, y)
+
+x = 1
+y = 5
+print(x, y)
+
+print('Всё клёво')
+
+x = 2
+y = 0
+print(x, y)
+
+x = 2
+y = 1
+print(x, y)
+
+x = 2
+y = 2
+print(x, y)
+
+x = 2
+y = 3
+print(x, y)
+
+x = 2
+y = 4
+print(x, y)
+
+x = 2
+y = 5
+print(x, y)
+
+print('Всё клёво')
+
+x = 3
+y = 0
+print(x, y)
+
+x = 3
+y = 1
+print(x, y)
+
+x = 3
+y = 2
+print(x, y)
+
+x = 3
+y = 3
+print(x, y)
+
+x = 3
+y = 4
+print(x, y)
+
+x = 3
+y = 5
+print(x, y)
+
+print('Всё клёво')
+
+x = 4
+y = 0
+print(x, y)
+
+x = 4
+y = 1
+print(x, y)
+
+x = 4
+y = 2
+print(x, y)
+
+x = 4
+y = 3
+print(x, y)
+
+x = 4
+y = 4
+print(x, y)
+
+x = 4
+y = 5
+print(x, y)
+
+print('Всё клёво')</code></pre>
+                    
+                    <p>Вывод программы:</p>
+                    <pre><code>00
+01
+02
+03
+04
+05
+Всё клёво
+10
+11
+12
+13
+14
+15
+Всё клёво
+20
+21
+22
+23
+24
+25
+Всё клёво
+30
+31
+32
+33
+34
+35
+Всё клёво
+40
+41
+42
+43
+44
+45
+Всё клёво</code></pre>
+                </article>
+                
+                <article id="functions">
+                    <h2><i class="fas fa-cogs"></i> Полезные встроенные функции Python</h2>
+                    
+                    <p>print() -> выводит сообщение в консоль</p>
+                    <p>input() -> приостанавливает выполнение кода, пока пользователь не введёт значение с клавиатуры и не нажмёт Enter и превращается в введённое пользователем сообщение типа str</p>
+                    <p>int() -> конвертирует значение в тип int</p>
+                    <p>str() -> конвертирует значение в тип str</p>
+                    
+                    <span class="sticker sticker-note"><i class="fas fa-sticky-note"></i> Примеры</span>
+                    
+                    <p>1.</p>
+                    <pre><code>print('Hello, World!')</code></pre>
+                    <p>Вывод: Hello, World!</p>
+                    
+                    <p>2.</p>
+                    <pre><code>x = input()
+y = input('Введите y: ')
+print(x, y)</code></pre>
+                    
+                    <p>1) Заменяем функции input() каким-нибудь введённым с клавиатуры значением. Пусть это будет, например, 'Привет' и 'Как дела?':</p>
+                    <pre><code>x = 'Привет'
+y = 'Как дела?'
+print(x, y)</code></pre>
+                    
+                    <p>2) Подставляем вместо переменных x и y значения:</p>
+                    <pre><code>print('Привет', 'Как дела?')</code></pre>
+                    
+                    <p>Вывод программы:</p>
+                    <pre><code>// тут происходит ввод пользователем Привет
+Введите y: // тут происходит ввод пользователем Как дела?
+Привет Как дела?</code></pre>
+                    
+                    <p>3.</p>
+                    <pre><code>x = int(input())
+print(x + 3)</code></pre>
+                    
+                    <p>1) Заменяем функцию input() каким-нибудь введённым с клавиатуры значением. Пусть это будет, например, '7':</p>
+                    <pre><code>x = int('7')
+print(x + 3)</code></pre>
+                    
+                    <p>2) Функция int() конвертирует значение в тип int. В данном случае ей это удаётся потому она успешно превращается в:</p>
+                    <pre><code>x = 7
+print(x + 3)</code></pre>
+                    
+                    <p>2) Подставляем вместо переменной x значение:</p>
+                    <pre><code>print(7 + 3)</code></pre>
+                    
+                    <p>3) Заменяем оператор(+) и операнды(7 и 3) на результат операции:</p>
+                    <pre><code>print(10)</code></pre>
+                    
+                    <p>Вывод программы:</p>
+                    <pre><code>// тут происходит ввод пользователем 7
+10</code></pre>
+                    
+                    <div class="important">
+                        <p>!!! Если в данном примере ввести с клавиатуры не число, то функция int() не сможет его сконвертировать из типа str в тип int и программа выдаст ошибку</p>
+                    </div>
+                </article>
+            </div>
+            
+            <div class="sidebar">
+                <h3><i class="fas fa-compass"></i> Навигация</h3>
+                <ul class="nav-links">
+                    <li><a href="#types"><i class="fas fa-cubes"></i> Типы данных</a></li>
+                    <li><a href="#variables"><i class="fas fa-tag"></i> Переменные</a></li>
+                    <li><a href="#operators"><i class="fas fa-plus-circle"></i> Операторы</a></li>
+                    <li><a href="#conditionals"><i class="fas fa-code-branch"></i> Условные операторы</a></li>
+                    <li><a href="#loops"><i class="fas fa-redo"></i> Циклы</a></li>
+                    <li><a href="#functions"><i class="fas fa-cogs"></i> Встроенные функции</a></li>
+                </ul>
+                
+                <div class="sidebar-box">
+                    <h4><i class="fas fa-lightbulb"></i> Советы по изучению</h4>
+                    <p>Регулярно практикуйтесь, решайте задачи и не бойтесь экспериментировать с кодом!</p>
+                </div>
+                
+                <div class="sidebar-box">
+                    <h4><i class="fas fa-book"></i> Полезные ресурсы</h4>
+                    <p>Официальная документация Python - лучший источник информации о языке.</p>
+                </div>
+            </div>
+        </div>
+        
+        <footer>
+            <p>Справочник по Python для Вики &copy; 2025 | <i class="fas fa-heart"></i> Создано для изучения Python</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+<!-- partial -->
+  <script  src="./script.js"></script>
+
+</body>
+</html>
